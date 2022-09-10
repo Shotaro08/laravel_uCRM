@@ -34,6 +34,9 @@ class InertiaTestController extends Controller
         $inertiaTest->save();
 
         //リダイレクト Laravel:9から
-        return to_route('inertia.index');
+        return to_route('inertia.index')
+        ->with([
+            'message' => '登録しました'
+        ]);
     }
 }
