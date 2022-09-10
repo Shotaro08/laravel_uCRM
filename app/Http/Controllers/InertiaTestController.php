@@ -21,6 +21,13 @@ class InertiaTestController extends Controller
     }
 
     public function store(Request $request){
+        // 0910 Laravel側でのみバリデーション objectで戻される
+        $request->validate([
+            'title' => ['required', 'max:8'],
+            'content' => ['required'],
+        ]);
+        
+
         $inertiaTest = new InertiaTest; //インスタンス化
         $inertiaTest->title = $request->title;
         $inertiaTest->content = $request->content;
