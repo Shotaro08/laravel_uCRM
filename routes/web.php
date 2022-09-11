@@ -43,5 +43,9 @@ Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
 })->middleware(['auth', 'verified'])->name('dashboard');
 
+Route::get('/component-test',function () {
+    return Inertia::render('ComponentTest');
+    }
+);
 
 require __DIR__ . '/auth.php';
